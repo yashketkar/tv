@@ -1,7 +1,5 @@
 package com.yashketkar.tv;
 
-import com.google.android.gms.ads.*;
-
 import android.app.ProgressDialog;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -20,7 +18,6 @@ import io.vov.vitamio.widget.VideoView;
 
 public class MediaPlayerDemo extends Activity {
 
-    private AdView adView;
     VideoView videoView;
     ProgressDialog pDialog;
 
@@ -52,16 +49,6 @@ public class MediaPlayerDemo extends Activity {
         pDialog.setCancelable(false);
         // Show progressbar
         pDialog.show();
-
-        // Create an ad.
-        AdView adView = (AdView) this.findViewById(R.id.adView2);
-        // Create an ad request. Check logcat output for the hashed device ID to
-        // get test ads on a physical device.
-        AdRequest adRequest = new AdRequest.Builder().build();
-        // .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-        // .addTestDevice("169FC43CA819A64255B0C3CEE2A6722F").build();
-        // Start loading the ad in the background.
-        adView.loadAd(adRequest);
 
         videoView = (VideoView) findViewById(R.id.VideoView);
         videoView.setVideoURI(Uri.parse(httpLiveUrl));
@@ -121,33 +108,4 @@ public class MediaPlayerDemo extends Activity {
                     });
         }
     }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        if (adView != null) {
-            adView.resume();
-        }
-    }
-
-    @Override
-    public void onPause() {
-        if (adView != null) {
-            adView.pause();
-        }
-        super.onPause();
-    }
-
-    /**
-     * Called before the activity is destroyed.
-     */
-    @Override
-    public void onDestroy() {
-        // Destroy the AdView.
-        if (adView != null) {
-            adView.destroy();
-        }
-        super.onDestroy();
-    }
-
 }
