@@ -20,10 +20,8 @@ public class TVChannelCustomAdapter extends ArrayAdapter<TVC> {
     int layoutResourceId;
     ListActivity act;
 
-    ArrayList<TVC> tvc = new ArrayList<TVC>();
+    ArrayList<TVC> tvc = new ArrayList<>();
     static int count;
-    TextView channeltext;
-    ImageView icon;
 
     public TVChannelCustomAdapter(Context context, ListActivity act,
                                   int layoutResourceId, ArrayList<TVC> tvc) {
@@ -49,9 +47,6 @@ public class TVChannelCustomAdapter extends ArrayAdapter<TVC> {
             holder = (TVCHolder) row.getTag();
         }
         TVC channel = tvc.get(position);
-        Typeface tf = Typeface.createFromAsset(context.getAssets(),
-                "fonts/RobotoCondensed-Bold.ttf");
-        holder.channeltext.setTypeface(tf);
         holder.channeltext.setText(channel.name);
         holder.icon.setImageResource(channel.imageid);
         count++;

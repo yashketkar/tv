@@ -22,7 +22,6 @@ public class MediaPlayerActivity extends AppCompatActivity {
 
     VideoView videoView;
     ProgressDialog pDialog;
-
     String httpLiveUrl;
 
     public void onCreate(Bundle savedInstanceState) {
@@ -37,8 +36,6 @@ public class MediaPlayerActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         httpLiveUrl = intent.getStringExtra("EXTRA_URL");
-        // Toast.makeText(getApplicationContext(), "Loading Live Stream...",
-        // Toast.LENGTH_LONG).show();
         setContentView(R.layout.activity_mediaplayer);
 
         // Create a progressbar
