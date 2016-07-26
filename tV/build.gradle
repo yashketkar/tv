@@ -20,7 +20,6 @@ android {
 
 dependencies {
     compile project(':initActivity')
-    compile project(':library')
     compile 'com.android.support:appcompat-v7:24.1.1'
     compile 'com.android.support:support-v4:24.1.1'
     compile 'com.google.android.gms:play-services:9.2.1'

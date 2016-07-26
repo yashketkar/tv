@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
-import com.winsontan520.wversionmanager.library.WVersionManager;
+//import com.winsontan520.wversionmanager.library.WVersionManager;
 
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
@@ -66,9 +66,9 @@ public class ListActivity extends ActionBarActivity {
 	}
 
 	private void checkVersion() {
-		WVersionManager versionManager = new WVersionManager(this);
-		versionManager.setVersionContentUrl(URL_VERSION);
-		versionManager.checkVersion();
+//		WVersionManager versionManager = new WVersionManager(this);
+//		versionManager.setVersionContentUrl(URL_VERSION);
+//		versionManager.checkVersion();
 	}
 
 	@Override
