@@ -1,2 +1,1 @@
-include ':initActivity'
-include ':tV'
+include ':tV', ':vitamio'
