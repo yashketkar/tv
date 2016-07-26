@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 //import com.winsontan520.wversionmanager.library.WVersionManager;
 
-import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.View;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-public class ListActivity extends ActionBarActivity {
+public class ListActivity extends AppCompatActivity {
     private ListView mlistview;
     public TVChannelCustomAdapter TVChannelAdapter;
     public ArrayList<TVC> tvc;
