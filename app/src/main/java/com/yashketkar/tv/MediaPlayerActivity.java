@@ -1,7 +1,7 @@
 package com.yashketkar.tv;
 
-import android.app.ProgressDialog;
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -11,12 +11,14 @@ import android.view.View;
 import android.view.View.OnFocusChangeListener;
 import android.view.Window;
 import android.view.WindowManager;
-//import io.vov.vitamio.LibsChecker;
+
 import io.vov.vitamio.MediaPlayer;
 import io.vov.vitamio.widget.MediaController;
 import io.vov.vitamio.widget.VideoView;
 
-public class MediaPlayerDemo extends AppCompatActivity {
+//import io.vov.vitamio.LibsChecker;
+
+public class MediaPlayerActivity extends AppCompatActivity {
 
     VideoView videoView;
     ProgressDialog pDialog;
@@ -37,10 +39,10 @@ public class MediaPlayerDemo extends AppCompatActivity {
         httpLiveUrl = intent.getStringExtra("EXTRA_URL");
         // Toast.makeText(getApplicationContext(), "Loading Live Stream...",
         // Toast.LENGTH_LONG).show();
-        setContentView(R.layout.media_player);
+        setContentView(R.layout.activity_mediaplayer);
 
         // Create a progressbar
-        pDialog = new ProgressDialog(MediaPlayerDemo.this);
+        pDialog = new ProgressDialog(MediaPlayerActivity.this);
         // Set progressbar title
         pDialog.setTitle("Loading Live Stream");
         // Set progressbar message

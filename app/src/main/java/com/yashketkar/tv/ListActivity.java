@@ -29,7 +29,7 @@ public class ListActivity extends AppCompatActivity {
         tvc = AddTVC.addTVC();
 
         TVChannelAdapter = new TVChannelCustomAdapter(ListActivity.this,
-                ListActivity.this, R.layout.row, tvc);
+                ListActivity.this, R.layout.list_item, tvc);
         TVChannelAdapter.setNotifyOnChange(true);
         mlistview.setAdapter(TVChannelAdapter);
         mlistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -40,7 +40,7 @@ public class ListActivity extends AppCompatActivity {
 //                displayInterstitial();
 
                 Intent intent = new Intent(ListActivity.this,
-                        MediaPlayerDemo.class);
+                        MediaPlayerActivity.class);
                 String extraURL = tvc.get(position).path;
                 intent.putExtra("EXTRA_URL", extraURL);
                 startActivity(intent);

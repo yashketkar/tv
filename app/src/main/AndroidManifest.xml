@@ -23,7 +23,7 @@
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name="com.yashketkar.tv.MediaPlayerDemo"
+            android:name=".MediaPlayerActivity"
             android:screenOrientation="landscape"/>
         <activity
             android:name="com.yashketkar.tv.ListActivity"
