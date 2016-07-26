@@ -1,19 +1,20 @@
 package com.yashketkar.tv;
 
-import java.util.ArrayList;
-
-//import com.winsontan520.wversionmanager.library.WVersionManager;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
-import android.view.View;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
+//import com.winsontan520.wversionmanager.library.WVersionManager;
+
 public class ListActivity extends AppCompatActivity {
+
     private ListView mlistview;
     public TVChannelCustomAdapter TVChannelAdapter;
     public ArrayList<TVC> tvc;
@@ -36,15 +37,11 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-
-//                displayInterstitial();
-
                 Intent intent = new Intent(ListActivity.this,
                         MediaPlayerActivity.class);
                 String extraURL = tvc.get(position).path;
                 intent.putExtra("EXTRA_URL", extraURL);
                 startActivity(intent);
-
             }
         });
 

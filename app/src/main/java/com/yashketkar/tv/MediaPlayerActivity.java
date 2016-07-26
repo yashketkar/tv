@@ -16,8 +16,6 @@ import io.vov.vitamio.MediaPlayer;
 import io.vov.vitamio.widget.MediaController;
 import io.vov.vitamio.widget.VideoView;
 
-//import io.vov.vitamio.LibsChecker;
-
 public class MediaPlayerActivity extends AppCompatActivity {
 
     VideoView videoView;
@@ -26,9 +24,6 @@ public class MediaPlayerActivity extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-//		if (!LibsChecker.checkVitamioLibs(this))
-//			return;
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
