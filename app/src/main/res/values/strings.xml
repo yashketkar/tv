@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">TV</string>
-
-    <color name="app_colour">#CE5043</color>
-
     <string name="action_share">Share</string>
     <string name="channel_name">Channel Name</string>
-
 </resources>

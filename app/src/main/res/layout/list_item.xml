@@ -19,6 +19,7 @@
         android:layout_centerVertical="true"
         android:layout_toEndOf="@+id/icon"
         android:layout_toRightOf="@+id/icon"
+        android:textColor="@android:color/black"
         android:textSize="30sp"
         android:textStyle="bold" />
 

@@ -13,38 +13,33 @@ import java.util.ArrayList;
 
 //import com.winsontan520.wversionmanager.library.WVersionManager;
 
-public class ListActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
-    private ListView mlistview;
-    public TVChannelCustomAdapter TVChannelAdapter;
+    private ListView tvclistview;
+    public TVCAdapter tvcAdapter;
     public ArrayList<TVC> tvc;
 //    public final static String URL_VERSION = "http://www.livetvap.5gbfree.com/version.txt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
-
-        mlistview = (ListView) findViewById(R.id.mlistview);
-
+        setContentView(R.layout.activity_main);
+        tvclistview = (ListView) findViewById(R.id.tvcListView);
         tvc = AddTVC.addTVC();
-
-        TVChannelAdapter = new TVChannelCustomAdapter(ListActivity.this,
-                ListActivity.this, R.layout.list_item, tvc);
-        TVChannelAdapter.setNotifyOnChange(true);
-        mlistview.setAdapter(TVChannelAdapter);
-        mlistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        tvcAdapter = new TVCAdapter(MainActivity.this, R.layout.list_item, tvc);
+        tvcAdapter.setNotifyOnChange(true);
+        tvclistview.setAdapter(tvcAdapter);
+        tvclistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                Intent intent = new Intent(ListActivity.this,
+                Intent intent = new Intent(MainActivity.this,
                         MediaPlayerActivity.class);
                 String extraURL = tvc.get(position).path;
                 intent.putExtra("EXTRA_URL", extraURL);
                 startActivity(intent);
             }
         });
-
         checkVersion();
     }
 
@@ -63,7 +58,7 @@ public class ListActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
+        // Handle toolbar item clicks here. The toolbar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();

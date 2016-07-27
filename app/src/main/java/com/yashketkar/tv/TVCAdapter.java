@@ -1,32 +1,27 @@
 package com.yashketkar.tv;
 
-import java.util.ArrayList;
-
-import android.app.Activity;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
-public class TVChannelCustomAdapter extends ArrayAdapter<TVC> {
+import java.util.ArrayList;
 
-    Context context;
+public class TVCAdapter extends ArrayAdapter<TVC> {
+
     int layoutResourceId;
-    ListActivity act;
-
+    MainActivity mainActivity;
     ArrayList<TVC> tvc = new ArrayList<>();
     static int count;
 
-    public TVChannelCustomAdapter(Context context, ListActivity act,
-                                  int layoutResourceId, ArrayList<TVC> tvc) {
-        super(context, R.layout.activity_list, tvc);
-        this.context = context;
-        this.act = act;
+    public TVCAdapter(MainActivity mainActivity,
+                      int layoutResourceId, ArrayList<TVC> tvc) {
+        super(mainActivity, R.layout.activity_main, tvc);
+        this.mainActivity = mainActivity;
         this.layoutResourceId = layoutResourceId;
         this.tvc = tvc;
     }
@@ -36,7 +31,7 @@ public class TVChannelCustomAdapter extends ArrayAdapter<TVC> {
         View row = convertView;
         TVCHolder holder = null;
         if (row == null) {
-            LayoutInflater inflater = ((Activity) context).getLayoutInflater();
+            LayoutInflater inflater = mainActivity.getLayoutInflater();
             row = inflater.inflate(layoutResourceId, parent, false);
             holder = new TVCHolder();
             holder.channeltext = (TextView) row.findViewById(R.id.channeltext);
@@ -49,7 +44,7 @@ public class TVChannelCustomAdapter extends ArrayAdapter<TVC> {
         holder.channeltext.setText(channel.name);
         holder.icon.setImageResource(channel.imageid);
         count++;
-        Animation animation = AnimationUtils.loadAnimation(context,
+        Animation animation = AnimationUtils.loadAnimation(mainActivity,
                 R.anim.push_up_in);
         animation.setDuration(250);
         row.startAnimation(animation);
